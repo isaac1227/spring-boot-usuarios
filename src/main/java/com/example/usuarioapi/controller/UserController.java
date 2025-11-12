@@ -58,9 +58,7 @@ public class UserController {
                         @org.springframework.data.web.PageableDefault(size = 20) Pageable pageable) {
                 Objects.requireNonNull(pageable, "pageable must not be null");
 
-                // Sanitizar las órdenes de ordenación recibidas. Algunos frontends pueden
-                // enviar valores no válidos (p. ej. "string"). Evitamos pasarlos a JPA
-                // y en su lugar aplicamos una whitelist de propiedades permitidas.
+                // Paginación, ordenación y filtrado
                 Set<String> allowed = Set.of("id", "username", "email", "createdAt", "active");
                 List<Sort.Order> validOrders = new ArrayList<>();
                 for (Sort.Order o : pageable.getSort()) {

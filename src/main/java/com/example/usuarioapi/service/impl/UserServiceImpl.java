@@ -32,7 +32,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse getById(@NonNull Long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+                .orElseThrow(() -> new com.example.usuarioapi.exception.ResourceNotFoundException(
+                        "User not found with id " + id));
         return toResponse(Objects.requireNonNull(user));
     }
 
