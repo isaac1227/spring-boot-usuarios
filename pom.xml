@@ -108,6 +108,26 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- Jib plugin: permite construir imágenes Docker con Maven (mvn jib:dockerBuild) -->
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<to>
+						<image>usuario-api:local</image>
+					</to>
+					<container>
+						<ports>
+							<port>8080</port>
+						</ports>
+						<jvmFlags>
+							<jvmFlag>-Xms128m</jvmFlag>
+							<jvmFlag>-Xmx512m</jvmFlag>
+						</jvmFlags>
+					</container>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
