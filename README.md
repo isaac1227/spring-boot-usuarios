@@ -8,9 +8,9 @@ Requisitos
 - Git
 - Java 17 + Maven si vas a ejecutar localmente sin Docker
 
-# Usuario API — Cómo ejecutar (breve)
+# Usuario API — Cómo ejecutar
 
-Dos formas: Local (tu máquina) o Docker (recomendado). Escoge una.
+Dos formas: Local o Docker.
 
 Requisitos
 
